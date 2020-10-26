@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<title>TL072</title>
+<meta name="description" content="Simple amplifier using a TL072 opamp">
+<meta name="keywords" content="simple, stripboard, amplifier, tl072, opamp, gain">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+<style>
+/* First image (Header. Full height) */
+.bgimg-1 {
+  background-image: url("../../images/header2.png");
+  background-position: left center;
+}
+
+/* Second image (Subheading) */
+.bgimg-2 {
+  background-image: url("../../images/header2.png");
+}
+</style>
+
+<body>
+<!-- Navbar (stay at top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars" style="padding-top:6px; padding-bottom:5px;"></i>
+    </a>
+    <a href="../../index.html" class="w3-bar-item w3-button w3-hover-black "><h3>HOME</h3></a>
+    <a href="../projects/index.html" class="w3-bar-item w3-button w3-hover-black w3-hide-small"><h3>PROJECTS</h3></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-black w3-hide-small"><h3>BLOCKS</h3></a>
+    <a href="../../index.html#contact" class="w3-bar-item w3-button w3-hover-black w3-hide-small"><h3>CONTACT</h3></a>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style="border-bottom: solid black 3px">
+    <a href="../projects/index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PROJECTS</a>
+    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">BLOCKS</a>
+    <a href="../../index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with TITLE Text -->
+<div class="bgimg-1 w3-display-container" style="border-bottom: 3px solid black" id="top">
+  <div class="w3-display-middle">
+    <div class="w3-center w3-padding-large w3-white sw3-xlarge"><h1>TL072 AMPLIFIER</h1></div>
+    </div>
+  </div>
+
+<!-- Content intro -->
+<div class="w3-content w3-container w3-padding-64">
+  <h2 class="w3-center">TL072 AMPLIFIER</h2>
+  <p>This circuit is designed as a simple way to make any signal louder, which can be very useful in a lot of different applications like mixers and effects pedals.
+    Boosting the signal before an audio circuit can help it work better with the quieter instrument level signals produced by guitars, and boosting it afterwards
+    can fix circuits which are too quiet to use reliably with other equipment.
+  </p>
+
+<!-- Diagram -->
+  <div class="w3-center w3-padding-large">
+    <a href="images/TL072/TL072_Diagram.png" target="_blank" title="Diagram"><img src="images/TL072/TL072_Diagram.png" class="w3-image" alt="Amplifier diagram" width="100%"></a>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Subheading Text -->
+<div class="bgimg-2 w3-display-container">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">DETAILS</span>
+  </div>
+</div>
+
+<!-- Details and inline image -->
+
+<div class="w3-content w3-container w3-padding-64">
+  <p>Operational amplifiers are IC chips which take an input signal and spit out the same signal only louder. The TL072 is a very common opamp found in in synthesisers, guitar pedals and other audio circuits;
+    but all opamaps do pretty much the same thing so this should work with other 8 pin chips like the LM358 or NE5532. Other chips have different sounds and characteristics so it's worth experimenting with them, just
+    check the datasheets before you do to make sure that the pins and supply voltages match up. 
+  </p>
+  <p>The TL072 is a dual opamp which means that it contains two identical opamp circuits, each represented by the triangles on the schematic. The second of these is the part which actually makes
+    the signal louder, and the first is used as a buffer to isolate the amplifier and match the impedances of whatever it's connected to.
+  </p>
+  <p>Impedance is a measure of how much a circuit will oppose a current. It's very similar to normal resistance, only it also accounts for AC circuit components like capacitors and inductors. The important
+    part is that if the impedance of two circuits is different then it can cause a lot of problems when you connect them together. If you've ever built something that sounds too quiet and a bit broken or 
+    scratchy, it might be because the impedances were not correctly matched throughout the circuit. The buffer is an amplifier with no gain (it doesn't make the signal any louder or quieter) which will match
+    the impedance of the circuits it is placed between so they can work together without problems. Buffers are particularly important when designing circuits to work with electric guitars as the pickups
+    of the guitar have a large impedance, which can cause problems when connected to low impedance audio circuits.
+  </p>
+  <p>The second part of the circuit amplifies the signal. Varying the resistance between pins 1 and 2 (the output and inverting input) changes the gain of the amplifier, making the output louder or quieter.
+    With zero resistance the gain is 0 (which is how the buffer circuit is set up), and as the resistance is increased the gain is also increased. Although the gain can be theoretically infinite if the two
+    pins are disconnected from each other, after a certain point the top and bottoms of the waves will be 'clipped' off which will distort the sound. The 25k potentiometer used in this circuit has a high enough
+    resistance to push the chip into distortion because I quite like pushing things into distortion, but if you want a cleaner (although quieter) amplifier you can use something smaller like a 10k or 15k potentiometer instead.
+  </p>
+
+  <!-- Scope pics -->
+  <div class="w3-center w3-padding-64">
+    <a href="images/TL072/scope.png" target="_blank" title="Scope"><img src="images/TL072/scope.png" class="w3-image" alt="Oscilloscope readings" width="100%"></a>
+    <p class="w3-black">Amplifier clipping with 25k potentiometer</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+  <a href="#top" class="w3-button w3-white w3-hover-black"><h3>TO THE TOP</h3></a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.instagram.com/berlincrisis_" title="Follow on Instagram" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.facebook.com/berlincrisis1" title="Follow on Facebook" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UCW2gocz0NoaTW-dJIFsfLqw" title="Follow on YouTube" target="_blank"><i class="fa fa-youtube-play w3-hover-opacity"></i></a>
+    <a href="https://ko-fi.com/berlincrisis" title="Donate to help me make more stuff" target="_blank"><i class="fa fa-fighter-jet w3-hover-opacity"></i></a>
+  </div>
+<a href="mailto:berlincrisis1@gmail.com" title="email me" class="w3-hover-white">berlincrisis1@gmail.com</a></p>
+</footer>
+ 
+<script>
+// Change border of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var height = (document.getElementById("top").offsetHeight)-(document.getElementById("myNavbar").offsetHeight)-3;
+    var navbar = document.getElementById("myNavbar");
+    var x = document.getElementById("navDemo");
+
+    if ((document.body.scrollTop > height || document.documentElement.scrollTop > height) && (x.className.indexOf("w3-show") == -1)){
+        navbar.style.borderBottom = "3px solid black";
+    } else {
+        navbar.style.borderBottom = "0px solid black";
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    var navbar = document.getElementById("myNavbar");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        navbar.style.borderBottom = "0px solid black";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        navbar.style.borderBottom = "3px solid black";
+    }
+}
+</script>
+
+</body>
+</html>
