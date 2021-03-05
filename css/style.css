@@ -312,8 +312,6 @@ body, html {
 @media only screen and (max-device-width: 1600px) {
 .bgimg-1, .bgimg-2, .bgimg-3 {background-attachment: scroll;}}
 
-@media (max-device-width: 1600px){ body {text-align: left;}}
-
 .link-black {  
   text-decoration: none;
   background-color: black;
