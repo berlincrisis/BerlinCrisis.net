@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>TL072</title>
+<meta name="description" content="Simple 9v preamp stripboard layout.">
+<meta name="keywords" content="stripboard, diy, opamp, amplifier">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+<style>
+/* First image (Header) */
+.bgimg-1 {
+  background-image: url("../images/target.png");
+}
+.bgimg-2 {
+  background-image: url("../images/target.png");
+}
+</style>
+
+<body>
+<!-- Navbar (stay at top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black">
+    <a href="../" class="w3-bar-item w3-button w3-hover-white"><h3>HOME</h3></a>
+    <a href="../crisis.html" class="w3-bar-item w3-button w3-hover-white"><h3>CRISIS</h3></a>
+    </a>
+  </div>
+</div>
+
+<!-- First Parallax Image with info link -->
+<div class="bgimg-1 w3-display-container" id="top">
+  <div class="w3-padding-large w3-animate-top">
+    <a href="../crisis.html#target" class="w3-right w3-red w3-padding w3-hover-black w3-button"><br>Hanoi<span class="w3-hide-small"> 1967</span></a>
+  </div>
+  <div class="w3-display-middle">
+    <div class="w3-center w3-padding-large w3-white"><h1><span class="w3-hide-small w3-hide-medium">SIMPLE </span>TL072</h1></div>
+    </div>
+  </div>
+
+<!-- Content  -->
+<div class="w3-content w3-container w3-padding-64 w3-text-white">
+  <h2 class="w3-center">OPERATIONAL AMPLIFIERS</h2>
+  <p>Opamps are an integrated circuit with an input, an inverting input and an output. The chip itself contains an amplifier with a huge internal gain, producing an output equal to the difference between voltage at
+  the two inputs multiplied by that gain. By feeding part of the output back to one of the inputs, the chip can be used to amplify the signal at the other input. The gain of the amplifier circuit is determined
+  by how much of the signal is fed back, with more feedback resulting in a smaller gain.</p>
+  <p>I have designed this circuit as a simple solution for managing audio levels within DIY effects pedals and circuit bent instruments. The simplicity makes it very easy to use alongside other circuits and 
+  the DC supply means that it can usually be powered from the same power supplys as the toy or pedal you are modifying.</p>
+  <p>The 25k potentiometer will overload the amp and add a nice bit of distortion at higher amplifications, but this can be substituted for a smaller potentiometer to keep the signal clean. Similarly, the TL072 can also be substituted for
+  other opamps like the LM358 or NE5532.</p>
+</div>
+
+<!-- Schematics -->
+<div class="w3-white">
+<div class="w3-content w3-container w3-padding-64">
+  <a href="resources/tl072/tl072_schem.png" title="Click to enlarge"><img src="resources/tl072/tl072_schem.png" class="w3-image" alt="Schamatic"></a>
+  <a href="resources/tl072/tl072_scope.png" title="Click to enlarge"><img src="resources/tl072/tl072_scope.png" class="w3-image" alt="Schamatic"></a>
+  <p class="w3-center">Amplifier clipping with 25k potentiometer</p>
+</div>
+</div>
+  
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+  <a href="#top" class="w3-button w3-white w3-hover-black"><h3>TO THE TOP</h3></a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.instagram.com/berlincrisis_" title="Follow on Instagram" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UCW2gocz0NoaTW-dJIFsfLqw" title="Follow on YouTube" target="_blank"><i class="fa fa-youtube-play w3-hover-opacity"></i></a>
+    <a href="https://ko-fi.com/berlincrisis" title="Donate to help me make more stuff" target="_blank"><i class="fa fa-fighter-jet w3-hover-opacity"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>

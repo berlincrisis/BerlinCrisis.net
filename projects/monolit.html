@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<title>MONOLIT</title>
+<meta name="description" content="Fully featured AS3340 VCO with stripboard schematics">
+<meta name="keywords" content="VCO, DIY, Modular, Oscillator, 3340">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+<style>
+/* First image (Header) */
+.bgimg-1 {
+  background-image: url("../images/aegean.png");
+}
+.bgimg-2 {
+  background-image: url("../images/aegean.png");
+}
+</style>
+
+<body>
+<!-- Navbar (stay at top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black">
+    <a href="../" class="w3-bar-item w3-button w3-hover-white "><h3>HOME</h3></a>
+    <a href="../crisis.html" class="w3-bar-item w3-button w3-hover-white"><h3>CRISIS</h3></a>
+    </a>
+  </div>
+</div>
+
+<!-- First Parallax Image with TITLE Text -->
+<div class="bgimg-1 w3-display-container" id="top">
+  <div class="w3-padding-large w3-animate-top">
+    <a href="../crisis.html#aegean" class="w3-right w3-red w3-padding w3-hover-black w3-button"><br>Aegean<span class="w3-hide-small"> Sea</span></a>
+  </div>
+  <div class="w3-display-middle">
+    <div class="w3-center w3-padding-large w3-white sw3-xlarge"><h1><span class="w3-hide-small w3-hide-medium">VCO </span>МОНОЛИТ</h1></div>
+  </div>
+</div>
+
+<!-- Intro  -->
+<div class="w3-content w3-container w3-padding-64 w3-text-white">
+  <h2 class="w3-center">MONOLITH</h2>
+  <p class="w3-center"><a href="#schems" title="Scroll to bottom" class="link-white">Click here</a> to scroll to schematics.</p>
+  <p class>МОНОЛИТ / MONOLIT is a radio message format used by the Russian Armed Forces. Each message contains a series of codewords accompanied by two 4-digit numbers. The codewords are matched to sealed envelopes, 
+    which contain instructions to decipher the 4-digit codes.</p>
+  <p>Monolit transmissions are sent at the highest level of urgency and supersede all other communications.</p>
+
+  <!--Images -->
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large"><br>
+      <a href="resources/monolit/monolit_front.png" title="Click to enlarge"><img src="resources/monolit/monolit_front.png" class="w3-image" alt="Front of panel"></a>
+    </div>
+    <div class="w3-col m6 w3-center w3-padding-large"><br>
+      <a href="resources/monolit/monolit_back.png" title="Click to enlarge"><img src="resources/monolit/monolit_back.png" class="w3-image" alt="Back of panel"></a>
+    </div>
+    
+    <!--About -->
+    <div class="w3-row w3-padding-large">
+      <br>
+      <h2>THE VCO</h2>
+      <p">Monolit is built around the Alfa AS3340 chip, a reproduction of the Curtis CEM3340 used in synthesisers 
+        including the SH-101 and Prophet-5. The Alfa and Curtis chips are almost identical so the circuit will work with either, but if you
+        use the Curtis chip you should swap the 51K pulldown resistor on the pulse output for a 10K.</p>
+
+      <p>The design is largely a combination of my favourite parts from Look Mum No Computer’s 
+        <a href="https://www.lookmumnocomputer.com/1222-performance-vco" title="Look Mum No Computer" class="link-white" target="_blank">Performance VCO</a> 
+        and the Skull & Circuits 
+        <a href="https://www.skullandcircuits.com/the-oscillator-one/" title="Skull & Circuits" class="link-white" target="_blank">Oscillator One</a>, 
+        with a redesigned octave switcher and voltage reference to accommodate 6 octaves.
+      </p>
+
+    <h2>FEATURES:</h2>
+      <ul>
+        <li>Octave selector and 1 octave fine tune</li>
+        <li>Linear and exponential FM</li>
+        <li>Soft and hard sync</li>
+        <li>Pulse width and pulse width modulation</li>
+        <li>Triangle, saw and pulse outputs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Subheading Text -->
+<div class="bgimg-2 w3-display-container" id="schems">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">SCHEMATICS</span>
+  </div>
+</div>
+
+<!-- Schematics -->
+<div class="w3-white">
+<div class="w3-content w3-container w3-padding-64 w3-center">
+  <h2>CIRCUIT DIAGRAM:</h2>
+  <a href="resources/monolit/monolit_schem_img.png" title="Click to enlarge"><img src="resources/monolit/monolit_schem_img.png" class="w3-image" alt="Schamatic drawing"></a>
+  <h2>STRIPBOARD LAYOUT:</h2>
+  <a href="resources/monolit/monolit_vero.png" title="Click to enlarge"><img src="resources/monolit/monolit_vero.png" class="w3-image" alt="Strip board layout"></a>
+  <p>Click images to enlarge, <a href="resources/monolit/monolit_schem.pdf" target="_blank" class="link-black" title="Monolit schematic">click here</a> for PDF of circuit diagram.</p>
+</div>
+</div>
+
+<!-- Instructions -->
+<div class="w3-content w3-container w3-padding-64 w3-black">
+  <h2>BUILD NOTES:</h2>
+  <ul>
+    <li>Don’t miss the trace cut hiding underneath the 620R resistor.</i1>
+    <li>The voltage reference is an <a href="https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM4040AIZ-41-NOPB?qs=QbsRYf82W3GsM%2FzEYhGsEQ%3D%3D" title="LM4040" class="link-white" target="_blank">LM4040AIZ-4.1</a>. The A denotes a higher accuracy grade and 4.1 is the target voltage. This component is the hardest part to find so it is tempting 
+        to substitute it for a regulator like the LM7805, but you shouldn’t do this as the voltage output from a regulator is not stable enough to maintain a reliable tune.</li>
+    <li>Use a multimeter to match the resistors on the rotary switch as closely as possible. They are used to split the 5 volts from the voltage reference into single volt steps 
+        which must be equal for the octaves to stay in tune.</li>
+    <li>Daisy chain the grounds of the jacks and potentiometers together and connect the end of the daisy chain to the board at the wire marked GND.</li>
+  </ul>
+  <h2>CALIBRATING MONOLIT:</h2>
+  <ol>
+    <li>Power up the oscillator and leave it for about 5 minutes to warm up.</li>
+    <li>Plug your sequencer or keyboard into the V/Oct input. Start by playing a low note and the same note an octave higher, then move the scale adjust trimmer (VR1) until the interval 
+        between the notes played by the VCO is the same. Repeat with 2 and 3 octave intervals until satisfied.</li>
+    <li>With your sequencer or keyboard holding a single note, use the octave switch on the front panel of the VCO and the octave adjust trimmer (VR2) in a similar manner to set the 
+        correct interval between octaves for the switch.</li>
+    <li>Set the VCO to play a high note somewhere around 2kHz. Alternating between this note and the same note an octave higher adjust the HF Tracking trimmer (VR3) until the interval 
+        between these notes is correct.</li>
+  </ol>
+  <p>Monolit is now calibrated and ready to go. Program the notes below and baptise your new VCO with Deutsch Amerikanische Freundschaft’s Der Mussolini.
+  </p>
+  <p class="w3-center">E1 | B0 | D2 | B0 | B1 | B0 | B0 | B1 | B0 | B1 | B0 | B1 | A1 | B0 | B1 | B0</p>
+
+  <div class="video-container">
+    <iframe class="responsive-iframe w3-padding-large" src="https://www.youtube.com/embed/4fiZVsKKV7Q"></iframe>
+  </div>
+  <p class="w3-center">This is you now.</p>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+  <a href="#top" class="w3-button w3-white w3-hover-black"><h3>TO THE TOP</h3></a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.instagram.com/berlincrisis_" title="Follow on Instagram" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UCW2gocz0NoaTW-dJIFsfLqw" title="Follow on YouTube" target="_blank"><i class="fa fa-youtube-play w3-hover-opacity"></i></a>
+    <a href="https://ko-fi.com/berlincrisis" title="Donate to help me make more stuff" target="_blank"><i class="fa fa-fighter-jet w3-hover-opacity"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>
