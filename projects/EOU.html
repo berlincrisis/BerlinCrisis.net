@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<title>ECHO OF UNIFICATION</title>
+<meta name="description" content="Circuit bent Yamaha PSS-390">
+<meta name="keywords" content="hack, pss, cheapkey, circuit bend, synth, diy">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+<style>
+  .bgimg-1 {
+    background-image: url("../images/steel.png");
+    background-position: right center;
+  }
+  .bgimg-2 {
+    background-image: url("../images/steel.png");
+    background-position: right center;
+  }
+</style>
+  
+<body>
+<!-- Navbar (stay at top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-black">
+    <a href="../" class="w3-bar-item w3-button w3-hover-white "><h3>HOME</h3></a>
+    <a href="../crisis.html" class="w3-bar-item w3-button w3-hover-white"><h3>CRISIS</h3></a>
+    </a>
+  </div>
+</div>
+  
+<!-- First Parallax Image with TITLE Text -->
+<div class="bgimg-1 w3-display-container" id="top">
+  <div class="w3-padding-large w3-animate-top">
+    <a href="../crisis.html#steel" class="w3-right w3-red w3-padding w3-hover-black w3-button"><br>Steel</a>
+  </div>
+  <div class="w3-display-middle">
+    <div class="w3-center w3-padding-large w3-white sw3-xlarge"><h1>ECHO OF UNIFICATION</h1></div>
+  </div>
+</div>
+
+<!-- Content intro -->
+<div class="w3-content w3-container w3-padding-64 w3-text-white">
+    <h2 class="w3-center">ECHO OF UNIFICATION</h2>
+    <p>Echo of Unification is a North Korean propaganda station, broadcasting their message of reunification under a Juche flag towards the South on FM and Shortwave.
+    The transmissions are heavily jammed by the ROK but can still be heard close to the DMZ and occasionally in other countries across the Asia-Pacific region.</p>
+
+    <!-- Video embed -->
+    <div class="video-container">
+        <iframe class="responsive-iframe w3-padding-large" src="https://www.youtube.com/embed/wNTPF9HsatM" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <br>
+    <h2>THE PSS-390</h2>
+    <p>Also sold as the PSS-380, the <a href="http://weltenschule.de/TableHooters/Yamaha_PSS-390.html" class="link-white" target="_blank">Yamaha PSS-390</a> is a 2 operator FM 
+    synthesiser from 1989. The keyboard is loaded with 100 different preset voices which can be selected through a keypad, but also includes a unique “digital synthesiser” section allowing the 
+    user to manipulate basic FM parameters, an ADR envelope and a vibrato effect for each selected sound. These sounds can then be stacked with another of the preset voices, allowing the PSS to
+    create some truly unique soundscapes even without modifications.</p>
+</div>
+
+<!-- Second Parallax Image with Subheading Text -->
+<div class="bgimg-2 w3-display-container" id="schems">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">Circuit Bending</span>
+  </div>
+</div>
+
+<!-- More content -->
+<div class="w3-content w3-container w3-padding-64 w3-text-white">
+    
+    <h2>DATA LINES</h2>
+    The data lines are 8 copper traces used to relay 8-bit digital instructions from the XG315D0 chip to the chip responsible for actual FM synthesis operations, the 
+    <a href="https://www.dtech.lv/files_ym/YM7129_pinout.png" class="link-white" target="_blank">YM7129</a>. Cutting and rewiring these traces scrambles the signals received by the 
+    YM7129, forcing it to create new and exciting sounds.</p>
+    <p>The YM7129 is connected to the data lines through pins 11 to 18 on the chip, which are in turn connected to pins 51 through 58 on the XG315D0. It is easiest to cut them near the pins of the
+    XG315D0, do this with a sharp craft knife or scalpel and take care not to damage any other traces. Use a multimeter to make sure that all the pins are totally disconnected.</p>
+    <p>The keyboard won’t start up if the data lines are not connected correctly, so make sure that however you reconnect these you can set them back to normal easily. I wired them back together 
+    through switches with each of the pins also connected to a banana jack. Also make sure that they are reconnected the right way round, the dot on the diagram below indicates the correct order 
+    for the pins.</p>
+    <p>Similar modifications to this can be done to almost any FM Yamaha keyboard including the DX100 and a good number of the other PSS and PSR series keyboards.</p>
+
+    <a href="resources/eou/boardhelper.png" title="Click to enlarge"><img src="resources/eou/boardhelper.png" class="w3-image eouimg" alt="EOU"></a>
+
+    <h2>CLOCK INJECTION</h2>
+    <p>The speed of the entire synthesiser including the pitch of the keyboard and drum sounds is set by a crystal resonating at a constant frequency. Swapping this with a variable frequency oscillator 
+    allows the pitch to be adjusted, and extreme frequencies will make the keyboard crash into harsh glitchy soundscapes. The crystal itself is a rounded light blue blob with three pins. There are two 
+    on the board but the interesting one is right next to the YM7129. Cut the trace connecting to pin 4 of the YM7129 (shown on the diagram above) to disconnect the crystal.</p>
+    <p>The oscillator is based around the LTC1799, a 555 derived timer designed for high frequency applications. 
+    <a href="https://www.circuitbenders.co.uk/tutorials/LTCinstallation1.html" class="link-white" target="_blank">Circuitbenders.co.uk</a> has a great tutorial for constructing a simple oscillator with the 
+    chip and also sells the LTC1799 presoldered to a DIP adapter if you don’t fancy the SMD soldering. I also added a 40106 oscillator and connected it to the frequency control of the LTC1799 though a 
+    vactrol, adding vibrato and FM effects.</p>
+    <p>Like the data lines, this is a generic modification and can be applied to any electronic device with a crystal.</p>
+</div>
+
+    <a href="resources/eou/eouall.png" title="Click to enlarge"><img src="resources/eou/eouall.png" class="w3-image eouimg" alt="EOU"></a>    
+
+<div class="w3-content w3-container w3-padding-64 w3-text-white">
+    <h2>BREAKOUT</h2>
+    <p>Breaking out circuits is the meat of circuit bending, and it is where the unique characteristics of the instrument begin to come out. The process is simple, just open the keyboard, use a long 
+    length of wire to jump random points on the board and see what happens. If a connection makes something interesting happen then mark the points you connected for later. Choose your favourite from 
+    these points then wire them to an external patch bay.
+    <p>Although there are no real rules to circuit bending there are a few general tips which you should keep in mind before modifying your instrument:</p>
+    <ul>
+      <li>It is very easy to kill your keyboard with a small mistake. There are ways to avoid this, but you should still only modify things if you are not afraid to lose them.</li>
+      <li>Avoid connecting anything to the power section of the keyboard (the section of the circuit to the left side of the YM7129 on the diagram above). Although the 12v supply here is safe, it will still
+      overvolt and kill the sensitive ICs.</li>
+      <li>Solder new wires on to the bottom of the board. This is much easier than soldering on to the top of the board.</li>
+    </ul>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+  <a href="#top" class="w3-button w3-white w3-hover-black"><h3>TO THE TOP</h3></a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.instagram.com/berlincrisis_" title="Follow on Instagram" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.youtube.com/channel/UCW2gocz0NoaTW-dJIFsfLqw" title="Follow on YouTube" target="_blank"><i class="fa fa-youtube-play w3-hover-opacity"></i></a>
+    <a href="https://ko-fi.com/berlincrisis" title="Donate to help me make more stuff" target="_blank"><i class="fa fa-fighter-jet w3-hover-opacity"></i></a>
+  </div>
+</footer>
+
+</body>
+</html>
